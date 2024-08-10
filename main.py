@@ -1,9 +1,6 @@
 import modrinth
+from api_functions import modLoaderFunctions
 
-project = modrinth.Projects.Search('3D skin').hits[0]
-versions_id = project.versions
-print(versions_id)
-for id in versions_id:
-    version = project.getVersion(id)
-    primaryFile = version.getPrimaryFile()
-    print(version.getDownload(primaryFile))
+version = modLoaderFunctions(modName='3D skin', version='1.21', loader='fabric').searchMods()
+print(version)
+
