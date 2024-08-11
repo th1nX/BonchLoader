@@ -1,4 +1,3 @@
-import modrinth
 import pyrinth
 
 

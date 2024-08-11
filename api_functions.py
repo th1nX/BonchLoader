@@ -1,4 +1,4 @@
-import modrinth
+import pyrinth
 
 class modLoaderFunctions:
 
@@ -8,12 +8,10 @@ class modLoaderFunctions:
         self.loader = loader
 
     def searchMods(self):
-        project = modrinth.Projects.Search(self.modName).hits[0]
-        versions_id = project.versions
-        versions = []
-        for id in versions_id:
-            version = project.getVersion(id)
-            primaryFile = version.getPrimaryFile()
-            downloadLink = version.getDownload(primaryFile)
-            versions.append(downloadLink)
-        return versions
+        try:
+            mod_search = pyrinth.Project.search(self.modName, limit=1)
+            mod_id = mod_search[0].model.project_id
+            mod_download = pyrinth.Project.get(mod_id).get_latest_version(loaders=[self.loader], game_versions=[self.version])
+            return mod_download
+        except Exception as exc:
+            return exc
