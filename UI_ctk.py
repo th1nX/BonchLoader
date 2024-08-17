@@ -1,7 +1,6 @@
 import customtkinter
 from customtkinter import filedialog
 
-
 customtkinter.set_appearance_mode("dark")
 mod_path = None
 download_path = None
@@ -55,5 +54,5 @@ class App(customtkinter.CTk):
 
 
 app = App()
-app.resizable(False,False)
+app.resizable(False, False)
 app.mainloop()
