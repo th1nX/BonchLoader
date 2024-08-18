@@ -1,4 +1,5 @@
 customtkinter==5.2.2
 python_modrinth==1.2.1
-requests
-python-dateutil
+requests==2.32.3
+python-dateutil==2.9.0.post0
+customtkinter==5.2.2
