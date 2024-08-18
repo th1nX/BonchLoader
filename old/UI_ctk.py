@@ -40,7 +40,7 @@ class App(customtkinter.CTk):
     def start_update(self):
         version = self.entry.get()
         loader = self.combobox.get()
-        print("START UPDATE", version, loader, download_path, mod_path)
+        print("START UPDATE", version, loader, mod_path, download_path)
 
     def select_mod_folder(self):
         global mod_path
