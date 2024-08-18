@@ -16,10 +16,11 @@ class modLoaderFunctions:
         try:
             mod_search = pyrinth.Project.search(self.modName, limit=1)
             mod_id = mod_search[0].model.project_id
-            mod_download = pyrinth.Project.get(mod_id).get_latest_version(loaders=[self.loader], game_versions=[self.version]).download()
-            return mod_download
+            mod_file = pyrinth.Project.get(mod_id).get_latest_version(loaders=[self.loader], game_versions=[self.version])
+            mod_file.download()
+            return f'{mod_file} was downloaded'
         except Exception as exc:
-            return exc
+            return f'Error: {exc}'
 
     def jar_unpacker(self):
         mods_names = []
