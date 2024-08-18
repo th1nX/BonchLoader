@@ -3,8 +3,6 @@ import os
 import json
 from fnmatch import fnmatch
 
-path = r"C:\Users\vbber\AppData\Roaming\PolyMC\instances\Tech&Magic\.minecraft\mods"
-
 def jar_unpack(path):
     mods_names = []
     e_mods = []
@@ -43,5 +41,3 @@ def jar_unpack(path):
     print("Error mods:", e_mods)
 
     return mods_names
-
-jar_unpack(path)
